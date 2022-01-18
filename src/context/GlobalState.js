@@ -27,7 +27,6 @@ export const GlobalProvider = ({children}) => {
             payload: task
         });
     }
-
     return (
         <GlobalContext.Provider value={{
             tasks: state.tasks,

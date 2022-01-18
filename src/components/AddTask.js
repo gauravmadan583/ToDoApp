@@ -18,7 +18,12 @@ export const AddTask = () => {
             description,
             urgent
         }
+
         addTask(newTask);
+        setUrgent(false);
+
+        setTask('');
+        setDescription('');
     };
 
     return (
