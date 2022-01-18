@@ -15,13 +15,12 @@ const ModifyTask = ({ task }) => {
             id: task.id,
             task: modifytask,
             description: modifydescription,
-            urgent: modifyurgent
+            urgent: modifyurgent,
+            done: task.done
         };
         
         deleteTask(task.id);
         addTask(modifiedTask);
-
-        
     }
     return (
 
@@ -50,15 +49,30 @@ const ModifyTask = ({ task }) => {
 
 const Task = ({ task }) => {
 
-    const { deleteTask } = useContext(GlobalContext);
-
+    const { addTask, deleteTask } = useContext(GlobalContext)
+    
+    const doneTask = (task) => {
+        const modifiedTask = {
+            id: task.id,
+            task: task.task,
+            description: task.description,
+            urgent: task.urgent,
+            done: true
+        };
+        
+        deleteTask(task.id);
+        addTask(modifiedTask);
+    }
     return (
         <li key={task.id}>
             <h1>{task.id}</h1>
             <h1>{task.task}</h1>
             <h2>{task.description}</h2>
+            <h2>{task.done? 'true':'false'}</h2>
             <ModifyTask task={task} />
-            <button onClick={() => deleteTask(task.id)}> Delete Task</button>
+            <button onClick={() => deleteTask(task.id)}>Delete Task</button>
+            <button onClick={() => doneTask(task)}>Task Done</button>
+
         </li>
     )
 }

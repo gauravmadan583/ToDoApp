@@ -14,7 +14,6 @@ export const GlobalProvider = ({children}) => {
     const [state, dispatch] = useReducer(AppReducer, initialState);
 
     function deleteTask(id) {
-        console.log(id);
         dispatch({
             type: 'DELETE_TASK',
             payload: id
@@ -32,7 +31,7 @@ export const GlobalProvider = ({children}) => {
             tasks: state.tasks,
             counter: state.counter,
             deleteTask, 
-            addTask
+            addTask,
         }}>
             {children}
         </GlobalContext.Provider>

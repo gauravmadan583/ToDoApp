@@ -16,12 +16,12 @@ export const AddTask = () => {
             id: counter,
             task,
             description,
-            urgent
+            urgent,
+            done: false
         }
 
         addTask(newTask);
         setUrgent(false);
-
         setTask('');
         setDescription('');
     };
