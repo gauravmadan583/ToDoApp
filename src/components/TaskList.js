@@ -2,11 +2,15 @@ import React, {useContext} from 'react';
 import { GlobalContext } from '../context/GlobalState';
 
 const Task = ({task}) => {
+
+    const { deleteTask } = useContext(GlobalContext);
+
     return (
         <li key={task.id}>
+            <h1>{task.id}</h1>
             <h1>{task.task}</h1>
             <h2>{task.description}</h2>
-            <p>{task.date}</p>
+            <button onClick={() => deleteTask(task.id)}> Delete Task</button>
         </li>
     )
 }

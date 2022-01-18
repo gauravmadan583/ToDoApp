@@ -3,12 +3,13 @@ const AppReducer = (state, action) => {
         case 'ADD_TASK':
             return {
                 ...state,
-                tasks: [action.payload, ...state.tasks]
+                tasks: [action.payload, ...state.tasks],
+                counter: state.counter+1
             }
         case 'DELETE_TASK':
             return {
                 ...state, 
-                tasks: state.tasks.filter(transaction => transaction.id !== action.payload)
+                tasks: state.tasks.filter(task => task.id !== action.payload)
             };
         default:
             return state;
