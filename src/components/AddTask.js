@@ -27,23 +27,25 @@ export const AddTask = () => {
     };
 
     return (
-            <form onSubmit={onSubmit}>
-                <div className='form-control'>
-                    <label htmlFor='text'>Task Name</label>
-                    <input type="text" value={task} onChange={(e) => setTask(e.target.value)} placeholder='Task Name'></input>
+        <div className="container-fluid">
+            <form onSubmit={onSubmit} className='d-flex flex-column justify-content-center'>
+                <div className='form-control form-row m-2'>
+                    <label className='col-4' htmlFor='text'>Task Name</label>
+                    <input className='' type="text" value={task} onChange={(e) => setTask(e.target.value)} placeholder='Task Name'></input>
                 </div>
 
-                <div className='form-control'>
-                    <label htmlFor='text'>Description</label>
-                    <input type='text' value={description} onChange={(e) => setDescription(e.target.value)} placeholder='Description'></input>
+                <div className='form-control form-row m-2'>
+                    <label className='col-4' htmlFor='text'>Description</label>
+                    <input className='' type='text' value={description} onChange={(e) => setDescription(e.target.value)} placeholder='Description'></input>
 
                 </div>
 
-                <div>
-                    <label htmlFor='checkbox'>Is it urgent?</label>
-                    <input type='checkbox' defaultChecked={urgent} onChange={(e) => setUrgent(e.target.checked)} placeholder='Task Name'></input>
+                <div className='form-control form-row m-2'>
+                    <label className='col-4' htmlFor='checkbox'>Is it urgent?</label>
+                    <input className='' type='checkbox' defaultChecked={urgent} onChange={(e) => setUrgent(e.target.checked)} placeholder='Task Name'></input>
                 </div>
-                <button className='btn'>Add Task</button>
+                <button className='form-row btn btn-primary m-2'>Add Task</button>
             </form>
+        </div>
     );
 };
