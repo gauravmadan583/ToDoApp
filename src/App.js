@@ -7,7 +7,7 @@ import { GlobalProvider } from './context/GlobalState';
 
 function App() {
 	return (
-		<div className='container'>
+		<div className='container d-flex flex-column justify-content-center col-12 col-md-6'>
 			<GlobalProvider>
 			<Header/>
 			<AddTask/>
